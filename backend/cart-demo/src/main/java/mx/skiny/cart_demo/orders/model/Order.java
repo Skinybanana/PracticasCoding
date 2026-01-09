@@ -26,6 +26,8 @@ public class Order {
     @EqualsAndHashCode.Include
     private Long id;
 
+    // FetchType.LAZY = NO se carga la relación hasta que se usa.
+    // Evita traer datos innecesarios y mejora performance.
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
